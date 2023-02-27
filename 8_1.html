@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_1</title>
+</head>
+<body>
+    <h1>Variable hoisting, operators, branches, loops</h1>
+    <h2>variable lift/hoisting</h2>
+    <p>In JS function and the variable declaration will be raised to the top of the function. Variables can be declared after use OR before the first use.</p>
+    <p>Function declarations and variable declarations will always be the interpreter quietly been "promoted" to the top of the method body</p>
+    <p>But JavaScript variable declarations will only increase, not initialized.</p>
+    <p>details here: <a href="https://www.w3big.com/js/js-hoisting.html#gsc.tab=0">link</a></p>
+
+    <h2>operators</h2>
+    <ul>
+        <li>Arithmetic Operators (Math ..., ++, --, ** Exponentiation)</li>
+        <li>Assignment Operators (=, +=, -=, /=, %=, **=)</li>
+        <li>Comparison Operators (==, ===, !=, !==, &#60;, &#62;, &#60;=, &#62;=, ?)</li>
+        <li>Logical Operators (and, or, not)</li>
+        <li>Conditional Operators</li>
+        <li>Type Operators (typeof, instanceof)</li>
+    </ul>
+    <p>more: <a href="https://www.w3schools.com/js/js_operators.asp">here</a></p>
+    <p>In case of many operarots you can/have to use brackets to make blocks</p>
+
+    <h2>branches (if, switch)</h2>
+    <h4>Example 1 - no overlap in cases, independent cases</h4>
+    <pre>
+        let h = 2;
+        switch(h) {
+            case 1:
+                console.log(1);
+            break;
+            case 2:
+                console.log(2);
+            break;
+            case 3:
+                console.log(3);
+            break;
+            default:
+                console.log("something");
+            break;
+        }
+    </pre>
+    <p>the same with if</p>
+    <pre>
+        if(h===1) { //the same as previous switch
+            console.log(1+" with if");
+        } else if (h===2) {
+            console.log(2+" with if");
+        } else if (h===3) {
+            console.log(3+" with if");
+        } else {
+            console.log("something"+" with if");
+        }
+    </pre>
+    <h4>Example 2, not independent cases, overlap</h4>
+    <pre>
+        let i = 8;
+        switch(true) {
+            case i&lt5:
+                console.log("smaller than 5, switch");
+            case i&lt9:
+                console.log("smaller than 9, switch");
+            case i&lt15:
+                console.log("smaller than 15, switch");
+            default:
+                console.log("smaller than infinite, switch");
+        }
+    </pre>
+    <p>the same with if:</p>
+    <pre>
+        if(i&lt5) {
+            console.log("smaller than 5, if");
+        }
+        if(i&lt9) {
+            console.log("smaller than 9, if");
+        }
+        if(i&lt15) {
+            console.log("smaller than 15, if");
+        }
+        if(i&ltInfinity) {
+            console.log("smaller than infinity, if");
+        }
+    </pre>
+
+    <h2>!! insert code skeleton with CTRL + SHIFT + P --> "Snippets: Insert Snippet"</h2>
+    <h2>loops</h2>
+    <p>loops can be used with arrays, objects and strings, html collections, node lists</p>
+    <p>for: arrays, strings!!!, html collections, node lists</p>
+    <p>for in: objects</p>
+    <p>for of: strings, arrays, node lists, iterrable objects</p>
+    <h4>continue, break - skip or stop in the for loop</h4>
+    <p>forEach: arrays, html collections, node lists (return or filter instead of continue : <a href="https://masteringjs.io/tutorials/fundamentals/foreach-continue">here</a>)</p>
+    <p>map: arrays </p>
+    <p>while, do while</p>
+
+    <script src="8_1.js"></script>
+</body>
+</html>
