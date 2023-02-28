@@ -7,9 +7,33 @@
     <title>8_2</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Functions, arrow functions, classes, destructoring variables</h1>
+    <button>func</button>
+    <button>arrow func</button>
+    <button>arrow func with event object</button>
     <h2>Functions</h2>
     <p>...</p>
+    <h2>Arrow functions</h2>
+    <p>details in the js file</p>
+    <p>this: for both arrow and common functions "this" means the window object</p>
+    <p>with event listeners: common functions' this meant the element on which the event happens, arrow functions' this means the window onbject</p>
+    <p>If you want to refer the element triggerd by an action with arrow function use the "event object" eg.: e, e.target</p>
+
+    <h2>classes, objects</h2>
+    <pre>
+        const obj = {
+            attr1: value1,
+            attr2: value2,
+            method: function() {
+                ...
+            }
+        }
+    </pre>
+    <p>class without constructor ... you can instantiate(példányosít) tha class to maje an object and manually add attributes to the object. the method defined in the class will work in the new object</p>
+    <p>class with constructor: the constructor is a function in a class. it is always executed in case of instantiation. you can instantiate with parameters. see js the file and the console. </p>
+    <h2>destructoring variables</h2>
+    <p>... see the js file and the console.</p>
+
     <script src="8_2.js"></script>
 </body>
 </html>
