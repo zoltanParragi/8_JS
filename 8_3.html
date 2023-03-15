@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_3</title>
+</head>
+<body>
+    <h1></h1>
+    <h2>Encapsulating, getters and setters</h2>
+    <p>They give more control how an attribute value is saved and provided.</p>
+    <p>JavaScript can secure better data quality when using getters and setters.</p>
+    <p>They are useful for doing things behind-the-scenes.</p>
+    <p>Do not use () when you access a getter or setter function directly on an object. With getters and setters you achieve attribute like handling.</p>
+
+    <h2>Static method in a class</h2>
+    <p>Without instantiation of a class (osztály példányosítása), the static method is accessible.</p>
+    <p>Cannot use the attributes of the class (!), because the attributes will have values only after instantiation. (cannot use this. ... in them)</p>
+    <p>Eg.: Math class and round method. Date class ...</p>
+
+    <h2>JSON</h2>
+    <p>The data format that can be understand different technologies and languages. (Eg.: How can you transfer data between php and js? -> In JSON format it is possible.)</p>
+    <p>JSON is a class in js.</p>
+    <p>The JSON.stingify(obj) method of the JSON class makes json STRING format from an object.</p>
+    <p>The JSON.parse(jsonString) method makes an object from data in json STRING format.</p>
+    <p>youcan create a json string in js this way:</p>
+    <pre>
+        const user = '{"name" : "Szabó János", "age" : "46"}'
+    </pre>
+
+    <h2>Ajax, fetch</h2>
+    <p>fetch uses ajax technology under the hood, but far easier to use.</p>
+    <p>See the js file and the console !!!</p>
+
+    <script src="8_3.js"></script>
+</body>
+</html>

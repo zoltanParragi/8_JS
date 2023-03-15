@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_4</title>
+</head>
+<body>
+    <h1>Fetch, POST</h1>
+    <h2>Content Type: application json</h2>
+    <p>If content type is 'application/json', the data sent can be found not in $_POST but in file_get_contents("php://input")</p>
+    <p>Here the data is transferred in string (json string) format.</p>
+
+    <h2>Content Type: application/x-www-form-urlencoded</h2>
+    <p>In this case form data is used to send the data. (Form adata format array is used to send data from the forms. ) In php it will land in the $_POST array. </p>
+    <p>Here the data is transferrd in array format.</p>
+
+    <h2>Content Type: multipart/form-data (sending files too)</h2>
+    <button>Click</button>
+    <input type="file" name="profile_img" id="fileId">
+    <p>The file is saved in the uploads folder and other post data can be seen in the console.</p>
+    <p>Az file-input-ba feltöltött flie-t hotzzá kell adni a a küldött form data array-hez. A config-ban 'Content-Type': 'multipart/form-data'.</p>
+    <p>A php file-ban a $_POST-ba érkeznek a küldött adatok.</p>
+    <p>Kép/file feltöltés feltételei: (1) Content Type: multipart/form-data, (2) FormData kell a küldéshez, (3) aküldés metódusa POST, (4) a feldolgozó php-ban így kell a megfelelő helyre menteni: move_uploaded_file($_FILES["myfile"]["tmp_name"], "uploads/".$_FILES["myfile"]["name"]); </p>
+    <p>A feltöltött file-ok alapból egy temporary mapában kerülnek, ahonnét a kívánt helyre kell menteni őket.</p>
+    <p>A $_FILES["myfile"]["tmp_name"] a fájl elérési útját a tmp mappában (az ideiglenes nevével) adja meg. A $_FILES["myfile"] a file eredeti nevét adja meg.</p>
+
+    <h4>domainek közötti átküldés</h4>
+    <p>31:20-tól video</p>
+    <p>php kiszolgáló file-ban: header("Access-Control-Alllow-Origin: http://localhost");</p>
+    <p>Php servert 8000-es ponton kell indítani ... (videóban) és: fetch('http://localhost:8000/feldolgozo.php')</p>
+    <p>így a localhost (80-as portról) megszólítható lesz a pl 8000-es port. Tudok közöttük adatot továbbítani.</p>
+    <p>Bárhonnét megszólíthatóság: header("Access-Control-Alllow-Origin: *");</p>
+
+    <h4>Hiba kezelés</h4>
+    <p>.catch() a hiba kezelés kézbevétele</p>
+    <p>és lehet még .finally() ha végül mindenképpen valaminek meg kell történnie. Pl. sikeres űrlap küldés esetén az űrlap mezők, feltöltött fileok kitörlése (üres form)</p>
+
+    <h4>Speciális header beállítások a fetch-ben - azonosításhoz</h4>
+    <p>Pl: 'X-valami': '...token...', amivel azonosítani lehet egy felhasználót.</p>
+    <p>Vagy: 'Authorization': 'bearer 12312312923987238729', authorizationt akkor használnak pl. ha valamilyen api url csak azonosítás útján elérhető. Pl.: mobil alkalmazás. Mindeki ugyanazt az app-ot használja a telefonján. Honnét tudja a szerver, hogy kinek milyen adatokat jelenítsen meg az adott appban. Mobil app (külső kliens) nem tud sessiont, cookie-t indítani és fenntartani sem. Ezért egy bearer tokent alkalmaznak headerben az authorization attribútummal. </p>
+    <p>Pl facebook app. Első belépéskor elküldöm az adataimat és kapok vissza egy tokent. Ezt eltárolhatom sütiben. Ez után az összes requestemhez mellékelni kell az 'Authorization': 'bearer 12312312923987238729' módon a headerben.</p>
+
+    <!-- <script src="8_4.js"></script> -->
+    <!-- <script src="8_4_3.js"></script> -->
+    <script src="8_4_3.js"></script>
+</body>
+</html>

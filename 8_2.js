@@ -1,3 +1,18 @@
+//anomin functions & arrow function
+const arr = ["a", "l", "m", "a"]
+const spellingArr = arr.map((e)=> e + " betű")
+console.log(spellingArr);
+
+//Immediately Invoked Function Expression (IIFE)
+(()=>{
+    let mrx = "Béla"
+    const greet = (name) => {
+        return "Hi " + name + "! It's nice to meet you." 
+    }
+    console.log(greet(mrx))
+})()
+
+//arrow function
 const add = function(n1, n2) {
     return n1 + n2
 }
@@ -11,7 +26,7 @@ const arrowMultiply = (a, b) => {
 console.log(arrowMultiply(4, 3))
 
 // with 1 parameter, 1 statement
-//no brackets, no curly braces
+//no brackets, no curly braces, implicite return!!!
 const arrow2times = x => x*2
 
 console.log(arrow2times(7))
@@ -30,16 +45,16 @@ arrA()
 
 document.querySelector("button:first-of-type").onclick = function() {
     console.log(this)
-    this.style.background = "yellow"
+    this.style.background = "yellow" //the element on which the action is triggered
 }
 
 document.querySelector("button:nth-child(3)").onclick = () => {
-    console.log(this)
+    console.log(this) // window object !!!
 }
 
 document.querySelector("button:nth-child(4)").onclick = (e) => {
     e.target.style.background = "red"
-    console.log(e.target)
+    console.log(e.target) //the element on which the action is triggered
 }
 
 //class without constructor

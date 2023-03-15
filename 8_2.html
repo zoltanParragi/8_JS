@@ -11,8 +11,45 @@
     <button>func</button>
     <button>arrow func</button>
     <button>arrow func with event object</button>
-    <h2>Functions</h2>
-    <p>...</p>
+    <h1>Függvények</h1>
+    <ul>
+        <li>A függvény egy olyan programrész, mely egy külön alprogramnak tekinthető és általában a program más részei indítják el, vagyis hívják meg.</li>
+        <li>A szoftver egyéb részeihez hasonlóan a függvény is műveletek meghatározott sorrendjét tartalmazza, melyet a <b>függvénytörzsnek</b> nevezünk.</li>
+        <li>Minden függvénynek átadhatóak értékek, melyet <b>paramétereknek vagy argumentumoknak</b> nevezünk.</li>
+        <li>A függvény is visszaadhat egy értéket, amely a <b>visszatérési érték</b> lesz.</li>
+    </ul>
+    <p>A JavaScript függvények:</p>
+
+    <ul>
+        <li>Maguk is objektumok, a Function objektumtól származnak. A többi ojektumtól az különbözteti meg őket, hogy meghívhatók.</li>
+        <li>Eltárolhatóak változóban.</li>
+        <li>Átadhatóak más függvényeknek paraméterként.</li>
+        <li>Szerepelhetnek visszatérési értékként.</li>
+    </ul>
+
+    <p>Eljárásokra és függvényekre akkor van szükség, amikor valamely megoldást, programrészletet szeretnénk többször is végrehajtani. Az ezekbe megírt programrészleteket hívhatjuk kisebb programoknak is, vagy ismertebb néven alprogramoknak. Eljárásokat és függvényeket a function kulcsszóval deklarálunk a JavaScriptben.</p>
+
+    <p>Visszatérési érték default: undefined vagy más általunk meghatározott.</p>
+    <p>paraméterek: A számuk lhete 0, 1, 2, ... A fv meghívásakor nem megadott paraméter undefined értékkel szerepel majd a fv törzsében.</p>
+    <p>A fv annyival több az eljárásoknál, hogy van visszatérési értéke.</p>
+    <p>A return utáni utasítások nem futnak le.</p>
+
+    <h2>anomin functions</h2>
+    <p>eg. in .map()</p>
+    <pre>array.map(()=> {...})</pre>
+
+    <h2>Immediately Invoked Function Expression (IIFE) - Önkioldó függvény</h2>
+    <p>a definiálás helyén azonnal lefut</p>
+    <p>scope miatt szükség van rá, hogy elszeparálhassuk a privát, csak az aktuális kódhoz tartozó változókat a globális névtértől, illetve a programkomponenseket egymástól (saját futtatási környezetet biztosítanak)</p>
+    <p>Use cases</p>
+    <ul>
+        <li>Avoid polluting the global namespace</li>
+        <li>Execute an async function</li>
+        <li>The module pattern</li>
+    </ul>
+    <p>more on IIFE: <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">here</a></p>
+
+
     <h2>Arrow functions</h2>
     <p>details in the js file</p>
     <p>this: for both arrow and common functions "this" means the window object</p>

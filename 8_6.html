@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_6</title>
+</head>
+<body>
+    <h1>Set és Map adatstruktúrák</h1>
+    <h2>Set</h2>
+    <p>A JavaScript Set egyedi értékek gyűjteménye. Minden érték csak egyszer fordulhat elő egy Set-ben.</p>
+    <p>Üres Set-et is lehet deklarálni és utána feltölteni értékekkel.</p>
+    <p>Nézd meg a konzolt is.</p>
+    <pre>
+        const mySet = new Set(['hó', 'eső', 'jég'])
+
+        mySet.add('zúzmara')
+        console.log(mySet)
+
+        mySet.delete('jég')
+        console.log(mySet)
+
+        mySet.forEach(e => {
+            console.log(e)
+        })
+
+        console.log(mySet.size)
+
+        console.log(mySet.values())
+        let text = "";
+
+        for(const elem of mySet.values()) {
+            text += elem + ", " 
+        }
+        console.log(text)
+    </pre>
+    <p>A values() metódus egy bejárható objektumot ad vissza.</p>
+    <p>A has() metódus égy érték meglétét ellenőrzi. ture-t vagy false-ot ad vissza.</p>
+
+    <h2>Map</h2>
+    <pre>
+        console.log("Map")
+        const myMap = new Map([
+            ["alma", 500],
+            ["banán", 600],
+            ["körte", 800]
+        ])
+        console.log(myMap);
+
+        myMap.set("szőlő", 1200)
+
+        console.log(myMap);
+        console.log(myMap.get("banán"));
+        console.log(myMap.size);
+        console.log(myMap.has('alma'));
+
+        myMap.delete("körte")
+        console.log(myMap)
+
+        console.log(".entries()");
+        console.log(myMap.entries());
+        let gyumik = ""
+
+        for(const gyum of myMap.entries()) {
+            console.log(gyum)
+            gyumik += gyum[0] + " ára: " + gyum[1] + ", "
+        }
+        console.log(gyumik)
+
+        
+        console.log("forEach")
+        myMap.forEach(element => {
+            console.log(element)
+        })
+    </pre>
+    <p>.has() egy attribútum meglétét ellenőrzi.</p>
+    <p>.entries() egy bejárható objektumot ad vissza, amely két elemű tömböket tartalmaz. for of-fal járható be.</p>
+    <p>forEach-csel a value-kat kapjuk visza. Lásd a konzolt.</p>
+    <script src="8_6.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Event bubbling</title>
+<style>
+  #myDiv1, #myDiv2 {
+    background-color: coral;
+    padding: 50px;
+  }
+  
+  #myP1, #myP2 {
+    background-color: white; 
+    font-size: 20px;
+    border: 1px solid;
+    padding: 20px;
+  }
+  </style>
+</head>
+<body>
+<h1>Event bubbling</h1>
+<h2>JavaScript addEventListener()</h2>
+<p>Esemény buborékolás: 
+    Ha egy szülő elemben elhelyezünk pl. egy gombot, majd a szülő elemnek is adunk eseménykezelőt és a gombnak is, a gombra kattintáskor, nem csak a gomb eseménye, hanem a szülő eseménye is lejátszódik. Azaz a kattintás a gyermek elemről ráterjed a szülő elemre, kiváltva annak a hozzá csatolt eseményét.</p>
+<p>Az addEventListener() 3. paramétere, azt szabályozza, hogy az esemény melyik elemen (szülő vagy gyermek) hajtódjon végre először. Ha false (alapértelmezett) az érték, akkor a gyermek, ha true, akkor a szülő eseménye fog először végrehajtódni.</p>
+<div id="myDiv1">
+  <h2>Bubbling:</h2>
+  <p id="myP1">Click me!</p>
+</div><br>
+
+<div id="myDiv2">
+  <h2>Capturing:</h2>
+  <p id="myP2">Click me!</p>
+</div>
+
+<script>
+document.getElementById("myP1").addEventListener("click", function() {
+  alert("You clicked the white element!");
+}, false);
+
+document.getElementById("myDiv1").addEventListener("click", function() {
+  alert("You clicked the orange element!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+  alert("You clicked the white element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+  alert("You clicked the orange element!");
+}, true);
+</script>
+
+</body>
+</html>
