@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_9</title>
+</head>
+<body>
+    <h1>IIFE, Objects as parameters, JS events</h1>
+
+    <h2>IIFE (immediately invoked function expression)</h2>
+    <p>The () operator calls the function.</p>
+
+    <h2>Objects as parameters</h2>
+    <p>Here, in the function parameter the object attributes are destuctured as variables. The variable names in the parameter must be the same as the object attributes.</p>
+    <pre>
+        const funcWithObjParam = ({a, b, c}) => {
+            console.log(a + b + c)
+        }
+        funcWithObjParam({a: 20, b: 30, c: 40});
+    </pre>
+    <p>more in the js file</p>
+
+    <h2>Events</h2>
+    <p>Categories: mouse events, keyboard events, window events, form events, clipboard(vágólap) events, media evens...</p>
+    <p>Inline onclick="..." or .onclick=... in js file is the same. They can execute only one function at a time. </p>
+    <p>!!! If there is more than one function added as .onclick=... only the last one will be executed.</p>
+    <p>With addEventListener you can add more than one function to an event and all will be executed in order.</p>
+    <p>removeEventListener ...</p>
+    <button>.onclick</button>
+    <button>addEventListener, removeEventListener</button>
+    <button onclick="alert('ok')">inline onclick</button>
+    
+    <script src="8_9.js"></script>
+</body>
+</html>
