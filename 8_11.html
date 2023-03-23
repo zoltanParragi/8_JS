@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_11</title>
+</head>
+<body>
+    <h1>.findIndex(), date, loops</h1>
+
+    <h2>date</h2>
+    <p>creating date object with constructor:</p>
+    <pre>
+        new Date()
+        new Date(year, month, day, hours, minutes, seconds, milliseconds)
+        new Date(milliseconds)
+        new Date(date string)
+
+        eg.: 
+        const d = new Date();
+        const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+        const d = new Date("October 13, 2014 11:13:00");
+        const d = new Date(1656168126641);
+
+        let day = d.getDate(); // number of a day in a month
+        .getYear ... lots of "get"s
+        and lots of "set"s
+    </pre>
+
+    <h2>loops</h2>
+    <pre>
+        for
+        for/in (object, string, array, HTML collection, Node list, ...?) - you can access the keys
+        for/of (iterable: with string, array, ... but NOT with obj) - you can access the elements (NOT the keys)
+        while
+        do/while
+    </pre>
+    <script src="8_11.js"></script>
+</body>
+</html>
