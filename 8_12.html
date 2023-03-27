@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_12</title>
+</head>
+<body>
+    <h1>Típus konverzió, RegExp, strict mode</h1>
+
+    <h2>Típus konverzió</h2>
+    <p>...</p>
+    <p>Number(), number típust ad vissza, ami mindig egy szám vagy NaN. NaN szám típusnak számít azt jelent, hogy valami nem szám.</p>
+    <p>String(a) vagy a.toString(), pl. false érték kiiratására, ha szükséges: String(false).</p>
+    <p>Vagy matematikai műveletek felépítéséban, ha nem akarjuk, hogy a felépítés során kiszámolódjon a műveletsor. Pl. üres string beszúrásával is lehet: 10+''+1 , ez így 101 lesz és nem 11.</p>
+    <p>Stringből szám. *1 ha egész számot akarunk kapni, vagy *1.0 ha tizedestörtet akarunk kapni. Pl.: '10'*1 + 256 vagy '10.00'*1.0+256</p>
+    <p>parseInt(), parseFloat()</p>
+
+    <h2>String replace</h2>
+    <p>str.replace('l', 'm') - az első l-et m-re cseréli, de csak az elsőt</p>
+    <h2>Regular expressions</h2>
+    <p>str.replace(/L/gi, 'm') - minden kis és nagy L-et m-re cserél </p>
+    <p>Email cím ellenőrzés: pattern.test(text) metódussal: </p>
+    <pre>
+        let text ="info@fgh.com"
+        let pattern = /^([a-z]+)@([a-z]+)\.[a-z]{2,4}$/
+        pattern.test(text)
+
+        vagy ékezetes kicsi és nagy betűk megengedése is: 
+        let pattern = /^([a-zá-űÁ-Ű]+)@([a-z]+)\.[a-z]{2,4}$/
+    </pre>
+    <p>see console and the js file</p>
+
+    <h2>strict mode</h2>
+    <p>"use strict"</p>
+    <p>The "use strict" directive is only recognized at the beginning of a script or a function.</p>
+    <p>Strict mode changes previously accepted "bad syntax" into real errors.</p>
+    <p>Not Allowed in Strict Mode:</p>
+    <ul>
+        <li>Using a variable, without declaring it</li>
+        <li>Using an object, without declaring it</li>
+        <li>Deleting a variable (or object)</li>
+        <li>Deleting a function</li>
+        <li>Duplicating a parameter name</li>
+        <li>Octal numeric literals, Octal escape characters</li>
+        <li>Writing to a read-only property</li>
+        <li>Writing to a get-only property</li>
+        <li>Deleting an undeletable property</li>
+        <li>The word eval, arguments, with, cannot be used as a variable</li>
+        <li>For security reasons, eval() is not allowed to create variables in the scope from which it was called</li>
+        <li>In strict mode, a variable can not be used before it is declared</li>
+        <li>In strict mode, eval() can not declare a variable using the var keyword</li>
+        <li>eval() can not declare a variable using the let keyword</li>
+        <li>The this keyword in functions behaves differently in strict mode. </li>
+        <li>The this keyword refers to the object that called the function.</li>
+        <li>If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window)</li>
+        <li>
+            Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.
+            <ul>
+                <li>implements</li>
+                <li>interface</li>
+                <li>let</li>
+                <li>package</li>
+                <li>private</li>
+                <li>protected</li>
+                <li>public</li>
+                <li>static</li>
+                <li>yield</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="8_12.js"></script>
+</body>
+</html>

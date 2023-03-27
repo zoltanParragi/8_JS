@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_13</title>
+</head>
+<body>
+    <h1>this, arrow function, modules, json, debugging, clean coding</h1>
+    <h2>this</h2>
+    <p>in itself - window object</p>
+    <p>in a function - window object</p>
+    <p>within an object it refers to the container object</p>
+    <p>in an event listener - to the element with which the event happen.</p>
+    <p>BUT!!! : in event listener with arrow function - the window object. So with arrow function you have to use <b>event</b> and <b>event.target</b> to refer the element --- see in js file and console</p>
+    <button>Click me</button>
+    <p>in an object(obj1) that borrows a method from another object(obj2) <b>this</b> refers to obj1. see in the js file and in the console.</p>
+
+    <h2>arrow function</h2>
+    <p>from ES6, shorter syntax</p>
+    <p>...</p>
+
+    <h2>modules</h2>
+    <p>type="module" added to script in HTML.</p>
+    <p>export default in the module, <b>import</b> in the main js.</p>
+    <p id="outputFromModuleClass"></p>
+    <p>!!! the name of the default exported function can be renamed anything in the importing js. </p>
+    <p>classes,functions, objects, variables ... also can be impoerted from a module</p>
+    <p>you can use code destruction in the importing file.</p>
+    <p>in case of exported functiond, variables ,... with the same name aliases can be used: eg. import {config as config2} from ... (see in js files)</p>
+
+    <h2>json</h2>
+    <p>to convert the string into a JavaScript object: JSON.parse()</p>
+    <p>Convert a JavaScript object into a string: JSON.stringify()</p>
+    <p>...</p>
+
+    <h2>debugger</h2>
+    <p></p>
+
+    <h2>clean coding</h2>
+    <p>no space with html attributes around the "=" sign</p>
+    <p>space around the "=" in js</p>
+    <p>variable names: camelCase</p>
+    <p>global variables, constans: uppercase - VARIABLE_NAME, PI</p>
+    <p>space around these: = + - / * </p>
+    <p>2 spaces (or tab) - line indent </p>
+    <p>objects: .... end with ";"</p>
+    <p>line width: 80 characters</p>
+    <p></p>
+
+    <script src="8_13.js" type="module"></script>
+</body>
+</html>

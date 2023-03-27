@@ -1,3 +1,7 @@
+const arr0 = ["a", "b", "c"]
+const x = arr0.findIndex(e => e === "a")
+console.log(x)
+
 const arr = [
     {
         id: 0,
